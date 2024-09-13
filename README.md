@@ -45,3 +45,23 @@ In the prefect UI I see:
   starts, just for when the flow is running. Not sure how to get the logging set up
   before the flow "officially" starts though?
 
+
+# Second attempt
+
+```bash
+make demo2
+```
+
+This is silly_flow_v2.py
+
+Since there was this odd state where the validators wanted to log stuff
+but weren't in a flow, I decided to make the "main" of my python program do
+as little as possible -- now a precheck-flow validates the structures and then
+calls the main flow.
+
+The good news is that the validator messages now show up in the UI, in the 
+precheck-flow.
+
+The bad news is that the logs to the terminal and the file from the "main"
+flow show up twice. And the debug logs going to the UI remains a problem.
+
